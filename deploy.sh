@@ -73,9 +73,9 @@ echo $adjoin_password_unhashed
  echo "****** Install Centrify  ******"
  echo "*******************************"
  echo ""
- echo -n "Enter the Lithium Technologies asset tag number (ex: LT####): "
+ echo -n "Enter the computer asset tag number, this will be set as the computers name: "
  read new_computer_name
- echo -n "Re-enter the Lithium Technologies asset tag number (ex: LT####): "
+ echo -n "Re-enter the computer asset tag number (ex: LT####): "
  read verify_new_computer_name
 
 if [[ $verify_new_computername -ne $new_computer_name ]]
