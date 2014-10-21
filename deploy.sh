@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Let's set some global variables
-title="SETME - Mac Deployment Menu"
+title="CHANGEME - Mac Deployment Menu"
 prompt="Choose an option:"
 options=("Set EFI Password" "Set Computer Name / Install Centrify" "Add Mobile User")
-dcip=SETME
-local_administrator=SETME
-adjoin_domain=SETME
-adjoin_user=SETME
-adjoin_password_hashed=SETME
-adjoin_ou=SETME
+dcip=CHANGEME
+local_administrator=CHANGEME
+adjoin_domain=CHANGEME
+adjoin_user=CHANGEME
+adjoin_password_hashed=CHANGEME
+adjoin_ou=CHANGEME
 
 # Ensure that whomever is running this script is either root or sudo'd
 if [[ $EUID -ne 0 ]]; then
