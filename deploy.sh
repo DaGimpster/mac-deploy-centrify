@@ -93,6 +93,7 @@ else
 	scutil --set LocalHostName "$new_computer_name"
 	installer -pkg bin/CentrifyDC-5.1.3.pkg -target / > /dev/null 2>&1
 	adjoin -w $adjoin_domain --user $adjoin_user --password $adjoin_password_unhashed --name $new_computer_name -c $adjoin_ou --force
+	adlicense --licensed
 fi
 }
 
