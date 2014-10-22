@@ -1,5 +1,5 @@
 Obviously need to document a lot more, but here are the global environment variables
-you really should touch at the top of deploy.sh. 
+you really should touch in the .settings file. 
 
 title="CHANGEME - Mac Deployment Menu" === Menu title, change it to suit your organization.
 
