@@ -4,11 +4,11 @@ for new helpdesk personnel to deploy Mac's with minimal training.
 
 The goals of this project:
 
-1.) Easily set the EFI password on the Mac
-2.) Set the computer name
-3.) Install the Centrify package
-4.) Join the computer to the specified domain
-5.) Add the specified user as a mobile user
+1.) Easily set the EFI password on the Mac\n
+2.) Set the computer name\n
+3.) Install the Centrify package\n
+4.) Join the computer to the specified domain\n
+5.) Add the specified user as a mobile user\n
 6.) Promote the specified mobile user to local administrator (req. of this project)
 
 Obviously I need to document a lot more, but here are the global environment variables
