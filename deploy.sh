@@ -1,13 +1,26 @@
 #!/bin/bash
 
+# Source the variables, and set a couple generic menu items up. 
 source .settings
 prompt="Choose an option:"
 options=("Set EFI Password" "Set Computer Name / Install Centrify" "Add Mobile User")
 
 # Ensure that whomever is running this script is either root or sudo'd
 if [[ $EUID -ne 0 ]]; then
+   echo " "
    echo "This script must be executed as root or with sudo"
+   echo " "
    exit 1
+fi
+
+# Ensure the .settings file octal permissions are 600
+perm=$(stat -f %p ".settings")
+if [ "$perm" -ne "100600" ]; then
+    echo " "
+    echo "Your .settings octal permissions are not 600"
+    echo "Please execute: chmod 600 .settings"
+    echo " "
+    exit 1
 fi
 
 # This function will set the EFI password
@@ -104,10 +117,10 @@ else
 fi
 }
 
-echo ""
+echo " "
 echo "$title"
 PS3="$prompt "
-echo ""
+echo " "
 select opt in "${options[@]}" "Quit"; do 
 
     case "$REPLY" in
