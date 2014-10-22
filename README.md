@@ -17,7 +17,11 @@ The goals of this project:
 Manifest
 ========
 
-Will add. 
+* .settings - User configurable variables, please see the .settings section.
+* deploy.sh - Main script, must be ran as sudo or root (self checks)
+* bin/createmobileaccount - Binary that can create mobile accounts on Mac OS
+* bin/setregproptool - Binary that can set & clear EFI passwords
+* bin/CentrifyDC-x.y.z.pkg - Centrify installation package for Mac OS, please obtain this from Centrify.
 
 .settings File
 ========
