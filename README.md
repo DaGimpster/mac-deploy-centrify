@@ -1,6 +1,6 @@
-This was written to help facilitate rapid and consitant Mac deployment. Centrify
+This was written to help facilitate rapid and consistent  Mac deployment. Centrify
 was used to control authentication and enforce group policy. This would allow
-for new helpdesk personel to deploy Mac's with minimal training. 
+for new helpdesk personnel to deploy Mac's with minimal training. 
 
 The goals of this project:
 
