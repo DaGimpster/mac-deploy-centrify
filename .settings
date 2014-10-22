@@ -1,7 +1,12 @@
+###############################################################################
+#
+# Please see README.md for usage examples. 
+# 
+###############################################################################
 title="CHANGEME - Mac Deployment Menu"
-dcip=CHANGEME
-local_administrator=CHANGEME
-adjoin_domain=CHANGEME
-adjoin_user=CHANGEME
-adjoin_password_hashed=CHANGEME
-adjoin_ou=CHANGEME
+dcip="CHANGEME"
+local_administrator="CHANGEME"
+adjoin_domain="CHANGEME"
+adjoin_user="CHANGEME"
+adjoin_password_hashed="CHANGEME"
+adjoin_ou="CHANGEME"
