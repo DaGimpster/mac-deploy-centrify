@@ -1,15 +1,26 @@
+mac-deploy-centrify
+=======
+
 This was written to help facilitate rapid and consistent  Mac deployment. Centrify
 was used to control authentication and enforce group policy. This would allow
 for new helpdesk personnel to deploy Mac's with minimal training. 
 
 The goals of this project:
 
-1.) Easily set the EFI password on the Mac
-2.) Set the computer name
-3.) Install the Centrify package
-4.) Join the computer to the specified domain
-5.) Add the specified user as a mobile user
-6.) Promote the specified mobile user to local administrator (req. of this project)
+* Easily set the EFI password on the Mac
+* Set the computer name
+* Install the Centrify package
+* Join the computer to the specified domain
+* Add the specified user as a mobile user
+* Promote the specified mobile user to local administrator (req. of this project)
+
+Manifest
+========
+
+Will add. 
+
+.settings File
+========
 
 Obviously I need to document a lot more, but here are the global environment variables
 you really should touch in the .settings file. 
@@ -43,3 +54,12 @@ example: echo "mypasswd" | base64
 adjoin_ou="CHANGEME"
 OU the computer account will be placed in. 
 example: OU=Computers,OU=company,DC=domain,DC=local
+
+Author
+======
+
+Andrew Shinn -- ashinn@ecimulti.org
+
+Twitter: @DaGimpster
+
+[Blog](http://www.ecimulti.org/blog)
