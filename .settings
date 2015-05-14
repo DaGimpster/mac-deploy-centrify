@@ -6,6 +6,7 @@
 title="CHANGEME - Mac Deployment Menu"
 dcip="CHANGEME"
 local_administrator="CHANGEME"
+local_administrator_password="CHANGEME"
 adjoin_domain="CHANGEME"
 adjoin_user="CHANGEME"
 adjoin_password_hashed="CHANGEME"
