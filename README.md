@@ -40,6 +40,9 @@ local_administrator="CHANGEME"
 Local administrator account used to promote the user being issued to the computer
 to administrator.
 
+local_administrator_password="CHANGEME"
+Local administrator password used to enable FileVault 2.
+
 adjoin_domain="CHANGEME"
 Active directory domain the machine will be joined to.
 example: domain.local

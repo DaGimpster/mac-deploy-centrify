@@ -5,14 +5,14 @@
 <key>Username</key>
 <string>LOCALADMIN</string>
 <key>Password</key>
-<string>LOCALADMINPASSWORD!!</string>
+<string>ADMINPASSWORD!!</string>
 <key>AdditionalUsers</key>
 <array>
     <dict>
         <key>Username</key>
         <string>MOBILEUSER</string>
         <key>Password</key>
-        <string>MOBILEUSERPASSWORD</string>
+        <string>USERPASSWORD</string>
     </dict>
 </array>
 <key>Certificate</key>

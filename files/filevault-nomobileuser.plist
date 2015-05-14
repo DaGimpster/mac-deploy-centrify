@@ -5,7 +5,7 @@
 <key>Username</key>
 <string>LOCALADMIN</string>
 <key>Password</key>
-<string>LOCALADMINPASSWORD!!</string>
+<string>ADMINPASSWORD</string>
 <key>Certificate</key>
 <data>
 MIICGDCCAYGgAwIBAgIFAORvmB8wCwYJKoZIhvcNAQEFMEAxHzAdBgNVBAMMFkZp

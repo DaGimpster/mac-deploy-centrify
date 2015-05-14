@@ -3,7 +3,7 @@
 # Source the variables, and set a couple generic menu items up. 
 source .settings
 prompt="Choose an option:"
-options=("Set EFI Password" "Set Computer Name / Install Centrify" "Add Mobile User")
+options=("Set EFI Password" "Set Computer Name / Install Centrify" "Add Mobile User" "Encrypt Harddrive")
 
 # Ensure that whomever is running this script is either root or sudo'd
 if [[ $EUID -ne 0 ]]; then
@@ -36,14 +36,13 @@ if [[ $? -eq 0 ]]
 then
 	echo "EFI password is currently enabled."
 	echo ""
-	echo -n "Enter the current EFI password? If none set, press ENTER: "
-	read old_efi_password
+	read -s -p "Enter the current EFI password? If none set, press ENTER: " old_efi_password
+	echo ""
 fi
 
- echo -n "Enter the EFI password you wish to be set: "
- read new_efi_password
- echo -n "Re-enter the EFI password you wish to be set: "
- read verify_new_efi_password
+ read -s -p "Enter the EFI password you wish to be set: " new_efi_password
+ echo ""
+ read -s -p "Re-enter the EFI password you wish to be set: " verify_new_efi_password
 
 # Verify passwords entered, if EFI was enabled pass the old password to tool. 
 if [[ $verify_new_efi_password -ne $new_efi_password ]]
@@ -79,10 +78,9 @@ echo $adjoin_password_unhashed
  echo "****** Install Centrify  ******"
  echo "*******************************"
  echo ""
- echo -n "Enter the computer asset tag number, this will be set as the computers name: "
- read new_computer_name
- echo -n "Re-enter the computer asset tag number (ex: LT####): "
- read verify_new_computer_name
+ read -p "Enter the computer asset tag number, this will be set as the computers name: " new_computer_name
+ echo ""
+ read -p "Re-enter the computer asset tag number: " verify_new_computer_name
 
 if [[ $verify_new_computername -ne $new_computer_name ]]
 then
@@ -103,10 +101,13 @@ function add_mobile_user {
  echo "****** Add Mobile User   ******"
  echo "*******************************"
  echo ""
- echo -n "Enter the AD user you wish to assign this computer to: "
- read mobile_username
- echo -n "Re-enter the AD user you wish to assign this computer to: "
- read verify_mobile_username
+ read -p "Enter the AD user you wish to assign this computer to: " mobile_username
+ echo ""
+ read -p "Re-enter the AD user you wish to assign this computer to: " verify_mobile_username
+ echo ""
+ read -s -p "Enter the AD user password  you wish to assign this computer to: " mobile_user_password
+ echo ""
+ read -s -p "Re-enter the AD user password you wish to assign this computer to: " verify_mobile_user_password
 
 if [[ $verify_mobile_username -ne $mobile_username ]]
 then
@@ -118,6 +119,44 @@ else
 fi
 }
 
+# This function will install the institutional FileVault key, and then encrypt the local harddrive
+function encrypt_harddrive {
+ echo "*******************************"
+ echo "******   Encrypt Drive   ******"
+ echo "*******************************"
+ echo ""
+
+if [ -z "$mobile_username" ]
+then
+	read -p "Mobile User hasnt been added yet, do you wish to continue? (y or n): " no_mobile_user
+fi
+
+if [[ $no_mobile_user == y ]]
+then
+	echo ""
+	echo "Drive encryption will begin in 10 seconds, system will restart automatically."
+	echo "Break NOW to cancel!"
+	echo ""
+	sleep 10
+	sed -i.orig "s/LOCALADMIN/$local_administrator/g" files/filevault-nomobileuser.plist
+	sed -i.orig "s/ADMINPASSWORD/$local_administrator_password/g" files/filevault-nomobileuser.plist
+	fdesetup enable -norecoverykey -institutional -inputplist < files/filevault-nomobileuser.plist -forcerestart
+elif [[ $no_mobile_user == "" ]]
+then
+	echo ""
+        echo "Drive encryption will begin in 10 seconds, system will restart automatically."
+        echo "Break NOW to cancel!"
+	echo ""
+        sleep 10
+        sed -i.orig "s/LOCALADMIN/$local_administrator/g" files/filevault-mobileuser.plist
+        sed -i.orig "s/ADMINPASSWORD/$local_administrator_password/g" files/filevault-mobileuser.plist
+        sed -i.orig "s/MOBILEUSER/$mobile_username/g" files/filevault-mobileuser.plist
+        sed -i.orig "s/USERPASSWORD/$mobile_user_password/g" files/filevault-mobileuser.plist
+        fdesetup enable -norecoverykey -institutional -inputplist < files/filevault-mobileuser.plist -forcerestart
+fi
+}
+
+# Menu options are at beginning of script.
 echo " "
 echo "$title"
 PS3="$prompt "
@@ -129,6 +168,7 @@ select opt in "${options[@]}" "Quit"; do
     1 ) set_efi_password;;
     2 ) set_computer_name;;
     3 ) add_mobile_user;;
+    4 ) encrypt_harddrive;;
 
     $(( ${#options[@]}+1 )) ) echo "Goodbye!"; break;;
     *) echo "Invalid option. Try another one.";continue;;
