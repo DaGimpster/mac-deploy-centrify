@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<key>Username</key>
+<string>leadmin</string>
+<key>Password</key>
+<string>b1gm4cattack!!</string>
+<key>AdditionalUsers</key>
+<array>
+    <dict>
+        <key>Username</key>
+        <string>MOBILEUSER</string>
+        <key>Password</key>
+        <string>memyeX#4</string>
+    </dict>
+</array>
+<key>Certificate</key>
+<data>
+MIICGDCCAYGgAwIBAgIFAORvmB8wCwYJKoZIhvcNAQEFMEAxHzAdBgNVBAMMFkZp
+bGVWYXVsdCBSZWNvdmVyeSBLZXkxHTAbBgNVBA0MFGwzLWQ2NjAyLmNkLmVudC5j
+b3JwMB4XDTE1MDUxMzEzNTYzMFoXDTE2MDUxMjEzNTYzMFowQDEfMB0GA1UEAwwW
+RmlsZVZhdWx0IFJlY292ZXJ5IEtleTEdMBsGA1UEDQwUbDMtZDY2MDIuY2QuZW50
+LmNvcnAwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAOs5Bq65yeJTNfA06BCn
+7v2Fu51f9OlpyEqr2Q1+7HfhyilLDkhge0dBq2b87pebdc3Jwvg1nLe9D+BtE3VG
+Vdp8cEPSEZ3eH2tkRbOszNw/VHXgVHj1FHOkmMzjaisYHWQvTXf6IdWtZj0Hj19d
+XiQMRzPuKUMqzfCDH4BGn3exAgMBAAGjIDAeMAsGA1UdDwQEAwICtDAPBgNVHRMB
+Af8EBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAJjuC6B/qqfKcYrG4QHKEJ4WWEjT
+Xq21FEjvq1hQue6j94VE3n3sjdkElYCV+IfIv1ca/9wZeBnCg8uM3xsFiNSgv/AR
+yA9V0XBniUCTnXpEHqIbwJqdo+DrbZIb7MIzNcvnP3kdlbMr+joAYwzoyxTx8LAT
+F19nn/YciMk8SGH6
+</data>
+</dict>
+</plist>
+</array>
+</dict>
+</plist>
