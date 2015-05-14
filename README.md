@@ -13,6 +13,7 @@ The goals of this project:
 * Join the computer to the specified domain
 * Add the specified user as a mobile user
 * Promote the specified mobile user to local administrator (req. of this project)
+* Encrypt the hard drive with the institutional recovery key
 
 Manifest
 ========
