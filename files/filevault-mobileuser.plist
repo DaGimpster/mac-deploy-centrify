@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
 <key>Username</key>
-<string>leadmin</string>
+<string>LOCALADMIN</string>
 <key>Password</key>
-<string>b1gm4cattack!!</string>
+<string>LOCALADMINPASSWORD!!</string>
 <key>AdditionalUsers</key>
 <array>
     <dict>
         <key>Username</key>
         <string>MOBILEUSER</string>
         <key>Password</key>
-        <string>memyeX#4</string>
+        <string>MOBILEUSERPASSWORD#4</string>
     </dict>
 </array>
 <key>Certificate</key>
