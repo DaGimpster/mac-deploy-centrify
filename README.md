@@ -22,6 +22,8 @@ Manifest
 * bin/createmobileaccount - Binary that can create mobile accounts on Mac OS
 * bin/setregproptool - Binary that can set & clear EFI passwords
 * bin/CentrifyDC-x.y.z.pkg - Centrify installation package for Mac OS, please obtain this from Centrify.
+* files/filevault-mobileuser.plist - FileVault plist for mobile account encryption.
+* files/filevault-nomobileuser.plist - FileVault plist for no mobile account encryption.
 
 .settings File
 ========
